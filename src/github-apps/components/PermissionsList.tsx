@@ -54,7 +54,7 @@ export function PermissionsList({
   categoriesWithoutSubcategories,
   automatedPageContext,
   mainContext,
-  tokenTypes = false,
+  tokenTypes = true,
 }: Props) {
   const { locale } = useRouter()
   const DEFAULT_VERSION = mainContext.nonEnterpriseDefaultVersion
@@ -129,8 +129,8 @@ export function PermissionsList({
                   <td className={permissionsClass}>
                     {operation['additional-permissions'] ? (
                       <Link href={opPath} title={t('screen_reader_text_checkmark_icon')}>
-                        <CheckIcon aria-hidden="true" />
-                        <span className="visually-hidden">
+                        <CheckIcon aria-hidden="false" />
+                        <span className="visually-unhidden">
                           {t('screen_reader_text_checkmark_icon')}
                         </span>
                       </Link>
